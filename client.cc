@@ -35,6 +35,18 @@ vector<vector<int>> gen_task(int x){
    return result;
 }
 
+int next_to_send(int current_node, int destination, int total_node){
+   if(destination == (current_node-1) % total_node) return destination;
+   int relative_dest = (destination - current_node + total_node) % total_node;
+   int temp = relative_dest;
+   int counter = -1;
+   while(temp){
+       temp /= 2;
+       counter++;
+   }
+   return counter;
+}
+
 
 void Client::initialize(){
 
