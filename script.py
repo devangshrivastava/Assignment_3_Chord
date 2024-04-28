@@ -97,7 +97,7 @@ while(temp != 0):
     temp = temp // 2
 
 # print("The length of the binary number is:", len)
-
+len = 5
 ned_script = generate_ned_script(num_servers, num_clients, len-1)
 print(num_clients, num_servers, len-1)
 write_ned_script(ned_script)

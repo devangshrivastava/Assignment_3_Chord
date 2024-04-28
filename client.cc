@@ -22,16 +22,20 @@ bool check(vector<vector<int>> task, int task_id){
    return true;
 }
 
-vector<vector<int>> gen_task(int x){
+vector<vector<int>> gen_task(int x, int current_node, int total_node){
    vector<vector<int>> result;
+
    for (int i = 0; i < x; i++){
+
        result.push_back(std::vector<int>());
        for (int j = 0; j < 5; j++)
            result[i].push_back(std::rand()%100);
+
        int task_id = rand()%x;
-       while(check(result, task_id)) task_id = rand()%x;
+       while(check(result, task_id) && current_node == task_id) task_id = rand()%total_node;
        result[i].push_back(task_id);  // last element as ID
    }
+
    return result;
 }
 
@@ -55,18 +59,32 @@ void Client::initialize(){
 
     task_result.resize(num_server, vector<int>(num_server, -1));
     scores.resize(num_server, 0);
-    vector<vector<int>> arr_1 = gen_task(num_server);
-
     int current_node = getId()-2; // Getting the module's own
-
+    vector<vector<int>> arr_1 = gen_task(3, current_node, num_client);
 
     EV << "My module ID is: " << current_node << endl;
 
     if(current_node == 0){
-        int destination = 23;
-        int next = next_to_send(current_node, destination, num_client);
-        EV<<"first sending to: "<<next<<" \n";
-        send_message({1,2,3,23},next,1); // arr, send_id, task_id
+
+        EV<<"row "<<arr_1.size()<<"\n";
+        EV<<"col "<<arr_1[0].size()<<"\n";
+
+        for(int i=0;i<arr_1.size();i++){
+            int destination = arr_1[i][arr_1[0].size()-1];
+            int next = next_to_send(current_node, destination, num_client);
+            send_message(arr_1[i],next,1);
+
+            for(int j=0;j<arr_1[0].size();j++){
+                EV<<arr_1[i][j]<<" ";
+            }
+            EV<<" --> first sending to: "<<next<<" \n";
+//            EV<<"\n";
+        }
+        EV<<"\n\n";
+
+         // arr, send_id, task_id
+
+
 
     }
     for (int i = 0; i < gateSize("out"); i++)
@@ -87,10 +105,10 @@ void Client::handleMessage(cMessage *msg){
        ClientMessage *clientMsg = dynamic_cast<ClientMessage *>(msg);
        int current_node = getId()-2;
        vector<int> v =  clientMsg->arr;
-       int destination = v[3];
+       int destination = v[v.size()-1];
        int subtask_num = clientMsg->subtask_num;
-       EV<<"Recieved by: "<<current_node<<" sending to: "<<v[3]<<"\n";
-       if(current_node != v[3]){
+       EV<<"Recieved by: "<<current_node<<" sending to: "<<destination<<"\n";
+       if(current_node != destination){
            int next = next_to_send(current_node, destination, num_client);
            send_message(v,next,subtask_num);
        }
