@@ -86,7 +86,7 @@ def write_ned_script(script):
         file.write(script)
 
 # Example usage:
-num_servers = 0
+
 # num_servers = int(input("Enter the number of servers: "))
 num_clients = int(input("Enter the number of clients: "))
 temp = num_clients
@@ -98,6 +98,7 @@ while(temp != 0):
 
 # print("The length of the binary number is:", len)
 len = 5
+num_servers = len-1
 ned_script = generate_ned_script(num_servers, num_clients, len-1)
 print(num_clients, num_servers, len-1)
 write_ned_script(ned_script)

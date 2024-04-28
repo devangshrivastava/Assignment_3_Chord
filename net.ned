@@ -33,7 +33,7 @@ simple Client
 network Net
 {
     parameters:
-        int numServers = 0;
+        int numServers = 4;
         int numClients = 15;
         @display("bgb=585,399");
     //        @display("bgb=512,374");

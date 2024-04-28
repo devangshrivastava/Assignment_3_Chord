@@ -1,8 +1,8 @@
 version 3
-run General-0-20240428-19:23:25-33676
+run General-0-20240428-20:30:46-37984
 attr configname General
-attr datetime 20240428-19:23:25
-attr datetimef 20240428-192325
+attr datetime 20240428-20:30:46
+attr datetimef 20240428-203046
 attr experiment General
 attr inifile start.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Net
-attr processid 33676
+attr processid 37984
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -469,51 +469,51 @@ par Net.c[0].out[4].channel delay 0.1s
 attr mutable ""
 attr unit s
 par Net.c[0] typename "\"Client\""
-par Net.c[0] totalServers 0
+par Net.c[0] totalServers 4
 par Net.c[0] totalClients 15
 par Net.c[1] typename "\"Client\""
-par Net.c[1] totalServers 0
+par Net.c[1] totalServers 4
 par Net.c[1] totalClients 15
 par Net.c[2] typename "\"Client\""
-par Net.c[2] totalServers 0
+par Net.c[2] totalServers 4
 par Net.c[2] totalClients 15
 par Net.c[3] typename "\"Client\""
-par Net.c[3] totalServers 0
+par Net.c[3] totalServers 4
 par Net.c[3] totalClients 15
 par Net.c[4] typename "\"Client\""
-par Net.c[4] totalServers 0
+par Net.c[4] totalServers 4
 par Net.c[4] totalClients 15
 par Net.c[5] typename "\"Client\""
-par Net.c[5] totalServers 0
+par Net.c[5] totalServers 4
 par Net.c[5] totalClients 15
 par Net.c[6] typename "\"Client\""
-par Net.c[6] totalServers 0
+par Net.c[6] totalServers 4
 par Net.c[6] totalClients 15
 par Net.c[7] typename "\"Client\""
-par Net.c[7] totalServers 0
+par Net.c[7] totalServers 4
 par Net.c[7] totalClients 15
 par Net.c[8] typename "\"Client\""
-par Net.c[8] totalServers 0
+par Net.c[8] totalServers 4
 par Net.c[8] totalClients 15
 par Net.c[9] typename "\"Client\""
-par Net.c[9] totalServers 0
+par Net.c[9] totalServers 4
 par Net.c[9] totalClients 15
 par Net.c[10] typename "\"Client\""
-par Net.c[10] totalServers 0
+par Net.c[10] totalServers 4
 par Net.c[10] totalClients 15
 par Net.c[11] typename "\"Client\""
-par Net.c[11] totalServers 0
+par Net.c[11] totalServers 4
 par Net.c[11] totalClients 15
 par Net.c[12] typename "\"Client\""
-par Net.c[12] totalServers 0
+par Net.c[12] totalServers 4
 par Net.c[12] totalClients 15
 par Net.c[13] typename "\"Client\""
-par Net.c[13] totalServers 0
+par Net.c[13] totalServers 4
 par Net.c[13] totalClients 15
 par Net.c[14] typename "\"Client\""
-par Net.c[14] totalServers 0
+par Net.c[14] totalServers 4
 par Net.c[14] totalClients 15
 par Net typename "\"Net\""
-par Net numServers 0
+par Net numServers 4
 par Net numClients 15
 

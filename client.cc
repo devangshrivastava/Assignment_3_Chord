@@ -3,16 +3,7 @@
 #include <sstream>
 Define_Module(Client);
 
-vector<int> random_server_list(int num_server) {
-    vector<int> server_list;
-    while (server_list.size() < (num_server / 2) + 1) {
-        int server = std::rand() % num_server;
-        if (find(server_list.begin(), server_list.end(), server) == server_list.end()) {
-            server_list.push_back(server);
-        }
-    }
-    return server_list;
-}
+
 
 bool check(vector<vector<int>> task, int task_id){
    int n = task.size();
@@ -39,8 +30,8 @@ vector<vector<int>> gen_task(int x, int current_node, int total_node){
    return result;
 }
 
-int next_to_send(int current_node, int destination, int total_node){
-   if(destination == (current_node-1) % total_node) return destination;
+int next_to_send(int current_node, int destination, int total_node, int len){
+   if(destination == (current_node-1) % total_node) return len ;
    int relative_dest = (destination - current_node + total_node) % total_node;
    int temp = relative_dest;
    int counter = -1;
@@ -56,22 +47,23 @@ void Client::initialize(){
 
     num_server = par("totalServers");
     num_client = par("totalClients");
+    int len = num_server;
 
-    task_result.resize(num_server, vector<int>(num_server, -1));
-    scores.resize(num_server, 0);
+
+//
     int current_node = getId()-2; // Getting the module's own
-    vector<vector<int>> arr_1 = gen_task(3, current_node, num_client);
+    vector<vector<int>> arr_1 = gen_task(15, current_node, num_client);
 
     EV << "My module ID is: " << current_node << endl;
 
-    if(current_node == 0){
+//    if(5 <= current_node &&  current_node <= 7){
 
         EV<<"row "<<arr_1.size()<<"\n";
         EV<<"col "<<arr_1[0].size()<<"\n";
 
         for(int i=0;i<arr_1.size();i++){
             int destination = arr_1[i][arr_1[0].size()-1];
-            int next = next_to_send(current_node, destination, num_client);
+            int next = next_to_send(current_node, destination, num_client, len);
             send_message(arr_1[i],next,1);
 
             for(int j=0;j<arr_1[0].size();j++){
@@ -82,11 +74,7 @@ void Client::initialize(){
         }
         EV<<"\n\n";
 
-         // arr, send_id, task_id
-
-
-
-    }
+//    }
     for (int i = 0; i < gateSize("out"); i++)
             EV << "Gate out[" << i << "] is connected to " << gate("out", i)->getPathEndGate()->getOwnerModule()->getFullPath() << endl;
 
@@ -94,14 +82,13 @@ void Client::initialize(){
         EV << "Gate in[" << i << "] is connected to " << gate("in", i)->getPathEndGate()->getOwnerModule()->getFullPath() << endl;
 
 
-    EV << "Client module initialized. totalServers=" << num_server << ", totalClients=" << num_client << endl;
-
+    EV << ", totalClients=" << num_client << endl;
 }
 
 
 
 void Client::handleMessage(cMessage *msg){
-
+    int len = num_server;
        ClientMessage *clientMsg = dynamic_cast<ClientMessage *>(msg);
        int current_node = getId()-2;
        vector<int> v =  clientMsg->arr;
@@ -109,18 +96,9 @@ void Client::handleMessage(cMessage *msg){
        int subtask_num = clientMsg->subtask_num;
        EV<<"Recieved by: "<<current_node<<" sending to: "<<destination<<"\n";
        if(current_node != destination){
-           int next = next_to_send(current_node, destination, num_client);
+           int next = next_to_send(current_node, destination, num_client, len);
            send_message(v,next,subtask_num);
        }
        else EV<<"Reached!! at "<<current_node<<"\n";
-
-
-//       if (clientMsg && node_id >= num_server && t<2){
-//          int client_id = msg->getArrivalGate()->getIndex();
-//          rating.push_back(clientMsg->arr);
-//          c_lock++;
-//          EV << "Received server rating from client "<<client_id<<":\n";
-//      }
-
 
 }
