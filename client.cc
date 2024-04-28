@@ -57,17 +57,26 @@ void Client::initialize(){
     scores.resize(num_server, 0);
     vector<vector<int>> arr_1 = gen_task(num_server);
 
-    int moduleId = getId(); // Getting the module's own
+    int current_node = getId()-2; // Getting the module's own
 
 
-    EV << "My module ID is: " << moduleId << endl;
-    for (int i = 0; i < gateSize("out"); i++) {
-            EV << "Gate out[" << i << "] is connected to " << gate("out", i)->getPathEndGate()->getOwnerModule()->getFullPath() << endl;
-        }
-    for (int i = 0; i < gateSize("in"); i++) {
-        EV << "Gate in[" << i << "] is connected to " << gate("in", i)->getPathEndGate()->getOwnerModule()->getFullPath() << endl;
+    EV << "My module ID is: " << current_node << endl;
+
+    if(current_node == 0){
+        int destination = 6;
+        int next = next_to_send(current_node, destination, num_client);
+        EV<<"first sending to: "<<next<<" \n";
+//        send()
+
     }
-        EV << "Client module initialized. totalServers=" << num_server << ", totalClients=" << num_client << endl;
+    for (int i = 0; i < gateSize("out"); i++)
+            EV << "Gate out[" << i << "] is connected to " << gate("out", i)->getPathEndGate()->getOwnerModule()->getFullPath() << endl;
+
+    for (int i = 0; i < gateSize("in"); i++)
+        EV << "Gate in[" << i << "] is connected to " << gate("in", i)->getPathEndGate()->getOwnerModule()->getFullPath() << endl;
+
+
+    EV << "Client module initialized. totalServers=" << num_server << ", totalClients=" << num_client << endl;
 
 }
 

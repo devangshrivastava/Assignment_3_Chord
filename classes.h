@@ -56,11 +56,10 @@ class Client : public cSimpleModule
         vector<vector<int>> rating;
         vector<int> scores;
         vector<msg> ml;
-        void send_message(std::vector<int> arr, int arr_len, int server_id, int subtask_num)
+        void send_message(std::vector<int> arr, int server_id, int subtask_num)
         {
             ClientMessage *newm= new ClientMessage();
             newm->arr=arr;
-            newm->arr_len=arr_len;
             newm->subtask_num=subtask_num;
             send(newm, "out", server_id);
         }
