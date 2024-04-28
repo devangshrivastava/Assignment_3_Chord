@@ -34,7 +34,7 @@ network Net
 {
     parameters:
         int numServers = 0;
-        int numClients = 8;
+        int numClients = 32;
         @display("bgb=585,399");
     //        @display("bgb=512,374");
     submodules:
@@ -62,6 +62,14 @@ network Net
             
             for i=0.. numClients-1 {
                 c[i].out++ --> {  delay = 100ms; } --> c[(i+4)%numClients].in++;
+            }
+            
+            for i=0.. numClients-1 {
+                c[i].out++ --> {  delay = 100ms; } --> c[(i+8)%numClients].in++;
+            }
+            
+            for i=0.. numClients-1 {
+                c[i].out++ --> {  delay = 100ms; } --> c[(i+16)%numClients].in++;
             }
             
         

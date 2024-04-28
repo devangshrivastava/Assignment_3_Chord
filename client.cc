@@ -63,10 +63,10 @@ void Client::initialize(){
     EV << "My module ID is: " << current_node << endl;
 
     if(current_node == 0){
-        int destination = 6;
+        int destination = 23;
         int next = next_to_send(current_node, destination, num_client);
         EV<<"first sending to: "<<next<<" \n";
-//        send()
+        send_message({1,2,3,23},next,1); // arr, send_id, task_id
 
     }
     for (int i = 0; i < gateSize("out"); i++)
@@ -83,26 +83,26 @@ void Client::initialize(){
 
 
 void Client::handleMessage(cMessage *msg){
-       if(t == 2) finish();
+
        ClientMessage *clientMsg = dynamic_cast<ClientMessage *>(msg);
-       Server_Client_Message *ServerMsg =dynamic_cast<Server_Client_Message *>(msg);
-
-       int node_id = msg->getArrivalGate()->getIndex();
-       if (ServerMsg && node_id < num_server && t<2 ){
-           int server_id = msg->getArrivalGate()->getIndex();
-           int subtask_num = ServerMsg->subtask_num;
-           EV << "Received Server Message from server"<<server_id<<": "<<ServerMsg ->ans<<"\n";
-
-           task_result[subtask_num][server_id] = ServerMsg->ans;
-           s_lock  += 1;
+       int current_node = getId()-2;
+       vector<int> v =  clientMsg->arr;
+       int destination = v[3];
+       int subtask_num = clientMsg->subtask_num;
+       EV<<"Recieved by: "<<current_node<<" sending to: "<<v[3]<<"\n";
+       if(current_node != v[3]){
+           int next = next_to_send(current_node, destination, num_client);
+           send_message(v,next,subtask_num);
        }
+       else EV<<"Reached!! at "<<current_node<<"\n";
 
-       if (clientMsg && node_id >= num_server && t<2){
-          int client_id = msg->getArrivalGate()->getIndex();
-          rating.push_back(clientMsg->arr);
-          c_lock++;
-          EV << "Received server rating from client "<<client_id<<":\n";
-      }
+
+//       if (clientMsg && node_id >= num_server && t<2){
+//          int client_id = msg->getArrivalGate()->getIndex();
+//          rating.push_back(clientMsg->arr);
+//          c_lock++;
+//          EV << "Received server rating from client "<<client_id<<":\n";
+//      }
 
 
 }
