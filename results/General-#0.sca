@@ -1,8 +1,8 @@
 version 3
-run General-0-20240428-20:30:46-37984
+run General-0-20240429-19:45:33-2272
 attr configname General
-attr datetime 20240428-20:30:46
-attr datetimef 20240428-203046
+attr datetime 20240429-19:45:33
+attr datetimef 20240429-194533
 attr experiment General
 attr inifile start.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Net
-attr processid 37984
+attr processid 2272
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -66,48 +66,6 @@ attr mutable ""
 par Net.c[7].out[0].channel delay 0.1s
 attr mutable ""
 attr unit s
-par Net.c[8].out[0].channel typename "\"ned.DelayChannel\""
-par Net.c[8].out[0].channel disabled false
-attr mutable ""
-par Net.c[8].out[0].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[9].out[0].channel typename "\"ned.DelayChannel\""
-par Net.c[9].out[0].channel disabled false
-attr mutable ""
-par Net.c[9].out[0].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[10].out[0].channel typename "\"ned.DelayChannel\""
-par Net.c[10].out[0].channel disabled false
-attr mutable ""
-par Net.c[10].out[0].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[11].out[0].channel typename "\"ned.DelayChannel\""
-par Net.c[11].out[0].channel disabled false
-attr mutable ""
-par Net.c[11].out[0].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[12].out[0].channel typename "\"ned.DelayChannel\""
-par Net.c[12].out[0].channel disabled false
-attr mutable ""
-par Net.c[12].out[0].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[13].out[0].channel typename "\"ned.DelayChannel\""
-par Net.c[13].out[0].channel disabled false
-attr mutable ""
-par Net.c[13].out[0].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[14].out[0].channel typename "\"ned.DelayChannel\""
-par Net.c[14].out[0].channel disabled false
-attr mutable ""
-par Net.c[14].out[0].channel delay 0.1s
-attr mutable ""
-attr unit s
 par Net.c[0].out[1].channel typename "\"ned.DelayChannel\""
 par Net.c[0].out[1].channel disabled false
 attr mutable ""
@@ -154,48 +112,6 @@ par Net.c[7].out[1].channel typename "\"ned.DelayChannel\""
 par Net.c[7].out[1].channel disabled false
 attr mutable ""
 par Net.c[7].out[1].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[8].out[1].channel typename "\"ned.DelayChannel\""
-par Net.c[8].out[1].channel disabled false
-attr mutable ""
-par Net.c[8].out[1].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[9].out[1].channel typename "\"ned.DelayChannel\""
-par Net.c[9].out[1].channel disabled false
-attr mutable ""
-par Net.c[9].out[1].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[10].out[1].channel typename "\"ned.DelayChannel\""
-par Net.c[10].out[1].channel disabled false
-attr mutable ""
-par Net.c[10].out[1].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[11].out[1].channel typename "\"ned.DelayChannel\""
-par Net.c[11].out[1].channel disabled false
-attr mutable ""
-par Net.c[11].out[1].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[12].out[1].channel typename "\"ned.DelayChannel\""
-par Net.c[12].out[1].channel disabled false
-attr mutable ""
-par Net.c[12].out[1].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[13].out[1].channel typename "\"ned.DelayChannel\""
-par Net.c[13].out[1].channel disabled false
-attr mutable ""
-par Net.c[13].out[1].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[14].out[1].channel typename "\"ned.DelayChannel\""
-par Net.c[14].out[1].channel disabled false
-attr mutable ""
-par Net.c[14].out[1].channel delay 0.1s
 attr mutable ""
 attr unit s
 par Net.c[0].out[2].channel typename "\"ned.DelayChannel\""
@@ -246,54 +162,6 @@ attr mutable ""
 par Net.c[7].out[2].channel delay 0.1s
 attr mutable ""
 attr unit s
-par Net.c[8].out[2].channel typename "\"ned.DelayChannel\""
-par Net.c[8].out[2].channel disabled false
-attr mutable ""
-par Net.c[8].out[2].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[9].out[2].channel typename "\"ned.DelayChannel\""
-par Net.c[9].out[2].channel disabled false
-attr mutable ""
-par Net.c[9].out[2].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[10].out[2].channel typename "\"ned.DelayChannel\""
-par Net.c[10].out[2].channel disabled false
-attr mutable ""
-par Net.c[10].out[2].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[11].out[2].channel typename "\"ned.DelayChannel\""
-par Net.c[11].out[2].channel disabled false
-attr mutable ""
-par Net.c[11].out[2].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[12].out[2].channel typename "\"ned.DelayChannel\""
-par Net.c[12].out[2].channel disabled false
-attr mutable ""
-par Net.c[12].out[2].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[13].out[2].channel typename "\"ned.DelayChannel\""
-par Net.c[13].out[2].channel disabled false
-attr mutable ""
-par Net.c[13].out[2].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[14].out[2].channel typename "\"ned.DelayChannel\""
-par Net.c[14].out[2].channel disabled false
-attr mutable ""
-par Net.c[14].out[2].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[0].out[3].channel typename "\"ned.DelayChannel\""
-par Net.c[0].out[3].channel disabled false
-attr mutable ""
-par Net.c[0].out[3].channel delay 0.1s
-attr mutable ""
-attr unit s
 par Net.c[1].out[3].channel typename "\"ned.DelayChannel\""
 par Net.c[1].out[3].channel disabled false
 attr mutable ""
@@ -336,184 +204,47 @@ attr mutable ""
 par Net.c[7].out[3].channel delay 0.1s
 attr mutable ""
 attr unit s
-par Net.c[8].out[3].channel typename "\"ned.DelayChannel\""
-par Net.c[8].out[3].channel disabled false
+par Net.c[0].out[3].channel typename "\"ned.DelayChannel\""
+par Net.c[0].out[3].channel disabled false
 attr mutable ""
-par Net.c[8].out[3].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[9].out[3].channel typename "\"ned.DelayChannel\""
-par Net.c[9].out[3].channel disabled false
-attr mutable ""
-par Net.c[9].out[3].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[10].out[3].channel typename "\"ned.DelayChannel\""
-par Net.c[10].out[3].channel disabled false
-attr mutable ""
-par Net.c[10].out[3].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[11].out[3].channel typename "\"ned.DelayChannel\""
-par Net.c[11].out[3].channel disabled false
-attr mutable ""
-par Net.c[11].out[3].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[12].out[3].channel typename "\"ned.DelayChannel\""
-par Net.c[12].out[3].channel disabled false
-attr mutable ""
-par Net.c[12].out[3].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[13].out[3].channel typename "\"ned.DelayChannel\""
-par Net.c[13].out[3].channel disabled false
-attr mutable ""
-par Net.c[13].out[3].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[14].out[3].channel typename "\"ned.DelayChannel\""
-par Net.c[14].out[3].channel disabled false
-attr mutable ""
-par Net.c[14].out[3].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[1].out[4].channel typename "\"ned.DelayChannel\""
-par Net.c[1].out[4].channel disabled false
-attr mutable ""
-par Net.c[1].out[4].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[2].out[4].channel typename "\"ned.DelayChannel\""
-par Net.c[2].out[4].channel disabled false
-attr mutable ""
-par Net.c[2].out[4].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[3].out[4].channel typename "\"ned.DelayChannel\""
-par Net.c[3].out[4].channel disabled false
-attr mutable ""
-par Net.c[3].out[4].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[4].out[4].channel typename "\"ned.DelayChannel\""
-par Net.c[4].out[4].channel disabled false
-attr mutable ""
-par Net.c[4].out[4].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[5].out[4].channel typename "\"ned.DelayChannel\""
-par Net.c[5].out[4].channel disabled false
-attr mutable ""
-par Net.c[5].out[4].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[6].out[4].channel typename "\"ned.DelayChannel\""
-par Net.c[6].out[4].channel disabled false
-attr mutable ""
-par Net.c[6].out[4].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[7].out[4].channel typename "\"ned.DelayChannel\""
-par Net.c[7].out[4].channel disabled false
-attr mutable ""
-par Net.c[7].out[4].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[8].out[4].channel typename "\"ned.DelayChannel\""
-par Net.c[8].out[4].channel disabled false
-attr mutable ""
-par Net.c[8].out[4].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[9].out[4].channel typename "\"ned.DelayChannel\""
-par Net.c[9].out[4].channel disabled false
-attr mutable ""
-par Net.c[9].out[4].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[10].out[4].channel typename "\"ned.DelayChannel\""
-par Net.c[10].out[4].channel disabled false
-attr mutable ""
-par Net.c[10].out[4].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[11].out[4].channel typename "\"ned.DelayChannel\""
-par Net.c[11].out[4].channel disabled false
-attr mutable ""
-par Net.c[11].out[4].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[12].out[4].channel typename "\"ned.DelayChannel\""
-par Net.c[12].out[4].channel disabled false
-attr mutable ""
-par Net.c[12].out[4].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[13].out[4].channel typename "\"ned.DelayChannel\""
-par Net.c[13].out[4].channel disabled false
-attr mutable ""
-par Net.c[13].out[4].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[14].out[4].channel typename "\"ned.DelayChannel\""
-par Net.c[14].out[4].channel disabled false
-attr mutable ""
-par Net.c[14].out[4].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Net.c[0].out[4].channel typename "\"ned.DelayChannel\""
-par Net.c[0].out[4].channel disabled false
-attr mutable ""
-par Net.c[0].out[4].channel delay 0.1s
+par Net.c[0].out[3].channel delay 0.1s
 attr mutable ""
 attr unit s
 par Net.c[0] typename "\"Client\""
-par Net.c[0] totalServers 4
-par Net.c[0] totalClients 15
+par Net.c[0] totalServers 3
+par Net.c[0] totalClients 8
+par Net.c[0] x 10
 par Net.c[1] typename "\"Client\""
-par Net.c[1] totalServers 4
-par Net.c[1] totalClients 15
+par Net.c[1] totalServers 3
+par Net.c[1] totalClients 8
+par Net.c[1] x 10
 par Net.c[2] typename "\"Client\""
-par Net.c[2] totalServers 4
-par Net.c[2] totalClients 15
+par Net.c[2] totalServers 3
+par Net.c[2] totalClients 8
+par Net.c[2] x 10
 par Net.c[3] typename "\"Client\""
-par Net.c[3] totalServers 4
-par Net.c[3] totalClients 15
+par Net.c[3] totalServers 3
+par Net.c[3] totalClients 8
+par Net.c[3] x 10
 par Net.c[4] typename "\"Client\""
-par Net.c[4] totalServers 4
-par Net.c[4] totalClients 15
+par Net.c[4] totalServers 3
+par Net.c[4] totalClients 8
+par Net.c[4] x 10
 par Net.c[5] typename "\"Client\""
-par Net.c[5] totalServers 4
-par Net.c[5] totalClients 15
+par Net.c[5] totalServers 3
+par Net.c[5] totalClients 8
+par Net.c[5] x 10
 par Net.c[6] typename "\"Client\""
-par Net.c[6] totalServers 4
-par Net.c[6] totalClients 15
+par Net.c[6] totalServers 3
+par Net.c[6] totalClients 8
+par Net.c[6] x 10
 par Net.c[7] typename "\"Client\""
-par Net.c[7] totalServers 4
-par Net.c[7] totalClients 15
-par Net.c[8] typename "\"Client\""
-par Net.c[8] totalServers 4
-par Net.c[8] totalClients 15
-par Net.c[9] typename "\"Client\""
-par Net.c[9] totalServers 4
-par Net.c[9] totalClients 15
-par Net.c[10] typename "\"Client\""
-par Net.c[10] totalServers 4
-par Net.c[10] totalClients 15
-par Net.c[11] typename "\"Client\""
-par Net.c[11] totalServers 4
-par Net.c[11] totalClients 15
-par Net.c[12] typename "\"Client\""
-par Net.c[12] totalServers 4
-par Net.c[12] totalClients 15
-par Net.c[13] typename "\"Client\""
-par Net.c[13] totalServers 4
-par Net.c[13] totalClients 15
-par Net.c[14] typename "\"Client\""
-par Net.c[14] totalServers 4
-par Net.c[14] totalClients 15
+par Net.c[7] totalServers 3
+par Net.c[7] totalClients 8
+par Net.c[7] x 10
 par Net typename "\"Net\""
-par Net numServers 4
-par Net numClients 15
+par Net numServers 3
+par Net numClients 8
+par Net x 10
+attr display bgb=585,399
 

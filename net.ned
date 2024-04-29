@@ -20,6 +20,7 @@ simple Client
         //        @display("i=block/routing");
         int totalServers;
         int totalClients;
+        int x;
     gates:
         input in[];
         output out[];
@@ -33,8 +34,9 @@ simple Client
 network Net
 {
     parameters:
-        int numServers = 4;
-        int numClients = 15;
+        int numServers = 3;
+        int numClients = 8;
+        int x = 10
         @display("bgb=585,399");
     //        @display("bgb=512,374");
     submodules:
@@ -47,6 +49,7 @@ network Net
             //            @display("p=200,100");
             totalServers = parent.numServers; // Assign total number of servers to each client module
             totalClients = parent.numClients; // Assign total number of clients to each client module
+            x = parent.x;
         }
     connections:
 
@@ -62,10 +65,6 @@ network Net
             
             for i=0.. numClients-1 {
                 c[i].out++ --> {  delay = 100ms; } --> c[(i+4)%numClients].in++;
-            }
-            
-            for i=0.. numClients-1 {
-                c[i].out++ --> {  delay = 100ms; } --> c[(i+8)%numClients].in++;
             }
             
         

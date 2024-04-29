@@ -1,4 +1,4 @@
-def generate_ned_script(num_servers, num_clients, len):
+def generate_ned_script(num_servers, num_clients, len, x):
     script = f"""\
 simple Server
 {{
@@ -22,6 +22,7 @@ simple Client
         //        @display("i=block/routing");
         int totalServers;
         int totalClients;
+        int x;
     gates:
         input in[];
         output out[];
@@ -37,6 +38,7 @@ network Net
     parameters:
         int numServers = {num_servers};
         int numClients = {num_clients};
+        int x = {x}
         @display("bgb=585,399");
     //        @display("bgb=512,374");
     submodules:
@@ -49,6 +51,7 @@ network Net
             //            @display("p=200,100");
             totalServers = parent.numServers; // Assign total number of servers to each client module
             totalClients = parent.numClients; // Assign total number of clients to each client module
+            x = parent.x;
         }}
     connections:
 
@@ -89,6 +92,7 @@ def write_ned_script(script):
 
 # num_servers = int(input("Enter the number of servers: "))
 num_clients = int(input("Enter the number of clients: "))
+x = int(input("Enter the value of x (greater than num_client as according to assignment): "))
 temp = num_clients
 len = 0
 
@@ -97,8 +101,8 @@ while(temp != 0):
     temp = temp // 2
 
 # print("The length of the binary number is:", len)
-len = 5
+# len = 5
 num_servers = len-1
-ned_script = generate_ned_script(num_servers, num_clients, len-1)
+ned_script = generate_ned_script(num_servers, num_clients, len-1, x)
 print(num_clients, num_servers, len-1)
 write_ned_script(ned_script)

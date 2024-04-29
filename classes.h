@@ -30,7 +30,8 @@ class ClientMessage:public cMessage
          vector<int> arr;
          int arr_len;
          int subtask_num;
-         int task_num;
+         int initial;
+         int destination;
 };
 
 class msg{
@@ -48,20 +49,18 @@ class Client : public cSimpleModule
         int task_num = 0;
         int num_server ;
         int num_client ;
-        int s_lock = 0;
         int c_lock = 0;
-        int t = 0;
+        int sum = {0};
 
-        vector<vector<int>> task_result;
-        vector<vector<int>> rating;
-        vector<int> scores;
         vector<msg> ml;
-        void send_message(std::vector<int> arr, int server_id, int subtask_num)
+        void send_message(std::vector<int> arr, int to, int subtask_num, int destination, int initial)
         {
             ClientMessage *newm= new ClientMessage();
             newm->arr=arr;
             newm->subtask_num=subtask_num;
-            send(newm, "out", server_id);
+            newm->destination = destination;
+            newm->initial = initial;
+            send(newm, "out", to);
         }
 
   protected:
