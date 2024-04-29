@@ -11,6 +11,11 @@
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
+#include<ctime>
+#include<set>
+#include <utility>
+#include <sstream>
+
 using namespace std;
 using namespace omnetpp;
 
@@ -34,13 +39,23 @@ class ClientMessage:public cMessage
          int destination;
 };
 
+class GossipMessage:public cMessage
+{
+     public:
+         time_t t;
+         int ans;
+         int client_id;
+
+};
+
+
 class msg{
 public:
-    int from;
-    int score;
     int hash;
-    vector<int> to;
+    bool flag;
 };
+
+
 
 class Client : public cSimpleModule
 {
@@ -50,9 +65,11 @@ class Client : public cSimpleModule
         int num_server ;
         int num_client ;
         int c_lock = 0;
+        int g_lock=0;
         int sum = {0};
+        int self=0;
 
-        vector<msg> ml;
+        set<pair<int,int>> ml;
         void send_message(std::vector<int> arr, int to, int subtask_num, int destination, int initial)
         {
             ClientMessage *newm= new ClientMessage();
@@ -62,29 +79,21 @@ class Client : public cSimpleModule
             newm->initial = initial;
             send(newm, "out", to);
         }
-
-  protected:
-    // The following redefined virtual function holds the algorithm.
-    virtual void initialize() override;
-    virtual void handleMessage(cMessage *msg) override;
-};
-
-
-class Server : public cSimpleModule
-{
-    public:
-        void send_message(int ans, int subtask_num, int client_id)
+        void send_gossip(int ans,time_t time, int destination, int initial)
         {
-            Server_Client_Message *newm= new Server_Client_Message();
+            GossipMessage *newm= new GossipMessage();
+            newm->client_id=initial;
             newm->ans=ans;
-//            newm->subtask_id=subtask_id;
-            newm->subtask_num=subtask_num;
-            send(newm, "out", client_id);
+            newm->t=time;
+            send(newm, "out", destination);
         }
+
   protected:
     // The following redefined virtual function holds the algorithm.
     virtual void initialize() override;
     virtual void handleMessage(cMessage *msg) override;
 };
+
+
 
 #endif /* CLASSES_H_ */

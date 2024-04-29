@@ -1,16 +1,3 @@
-simple Server
-{
-    parameters:
-        //        @display("i=block/routing");
-        int totalServers;
-        int totalClients;
-    //        int delay;
-    gates:
-        input in[];
-        output out[];
-
-    // You can access totalServers and totalClients in handleMessage method or other member functions
-}
 
 
 
